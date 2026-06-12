@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Leandra ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+    overflow-y:auto;
+    font-family:Arial,sans-serif;
+    background:#000;
+}
+
+.netflix{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:sumir 4s forwards;
+    animation-delay:3s;
+}
+
+.netflix-text{
+    font-size:60px;
+    font-weight:bold;
+    color:#e50914;
+    letter-spacing:4px;
+    text-align:center;
+    animation:zoom 3s ease;
+}
+
+@keyframes zoom{
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes sumir{
+    to{
+        opacity:0;
+        visibility:hidden;
+    }
+}
+
+.main{
+    display:none;
+    width:100%;
+    min-height:100vh;
+    justify-content:center;
+    align-items:flex-start;
+    padding:20px 0;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+}
+
+.container{
+    background:rgba(255,255,255,.96);
+    width:90%;
+    max-width:750px;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+h1{
+    color:#e91e63;
+    margin-bottom:20px;
+}
+
+.intro{
+    color:#555;
+    font-size:22px;
+    line-height:1.6;
+}
+
+button{
+    margin-top:30px;
+    background:#e91e63;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:20px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+
+#mensagem{
+    display:none;
+    margin-top:35px;
+    animation:aparecer 1.5s ease;
+}
+
+.texto{
+    font-size:22px;
+    line-height:1.9;
+    color:#444;
+}
+
+.destaque{
+    display:block;
+    margin:20px 0;
+    font-size:34px;
+    font-weight:bold;
+    color:#e91e63;
+}
+
+.assinatura{
+    margin-top:20px;
+    font-size:24px;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="netflix">
+    <div class="netflix-text">
+        ANTONIEL ❤️ LEANDRA
+    </div>
+</div>
+
+<audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="main" id="main">
+
+<div class="container">
+
+<h1>Para Leandra ❤️</h1>
+
+<p class="intro">
+Se você chegou até aqui, é porque alguém preparou isso especialmente para você. ❤️
+</p>
+
+<button onclick="mostrarMensagem()">
+💌 Abrir Carta
+</button>
+
+<div id="mensagem">
+
+<hr style="margin:25px 0;border:none;border-top:1px solid #ddd;">
+
+<p class="texto">
+
+Existem pessoas que passam pela nossa vida e deixam apenas lembranças.
+
+<br><br>
+
+Mas existem aquelas que transformam momentos simples em algo especial, que fazem um dia comum parecer melhor apenas por estarem presentes.
+
+<br><br>
+
+Você é exatamente esse tipo de pessoa.
+
+<br><br>
+
+Gosto do seu jeito, das nossas conversas, das risadas compartilhadas e da sensação boa que aparece sempre que penso em você.
+
+<br><br>
+
+<span class="destaque">
+Você tornou meus dias mais especiais. ❤️
+</span>
+
+E mesmo que nem sempre existam palavras perfeitas para explicar tudo isso, achei que valia a pena te lembrar do quanto você é importante.
+
+<br><br><br>
+
+<div class="assinatura">
+Com carinho,<br>
+Antoniel ❤️
+</div>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+setTimeout(() => {
+    document.getElementById("main").style.display = "flex";
+}, 3000);
+
+function mostrarMensagem(){
+
+    const musica = document.getElementById("musica");
+
+    musica.play().catch(function(e){
+        console.log(e);
+    });
+
+    document.querySelector("button").style.display = "none";
+
+    const mensagem = document.getElementById("mensagem");
+
+    mensagem.style.display = "block";
+
+    mensagem.scrollIntoView({
+        behavior:"smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
